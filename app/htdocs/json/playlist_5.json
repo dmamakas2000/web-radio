@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Do It To It",
+        "artist": "ACRAZE feat. Cherish",
+        "path": "http://localhost:9090/audio/ACRAZE feat. Cherish - Do It To It.mp3"
+    },
+    {
+        "name": "Ocean",
+        "artist": "Ali Bakgor, Kállay Saunders",
+        "path": "http://localhost:9090/audio/Ali Bakgor, Kállay Saunders - Ocean.mp3"
+    },
+    {
+        "name": "Love Again",
+        "artist": "Dua Lipa",
+        "path": "http://localhost:9090/audio/Dua Lipa - Love Again.mp3"
+    },
+    {
+        "name": "Bad Habits",
+        "artist": "Ed Sheeran",
+        "path": "http://localhost:9090/audio/Ed Sheeran - Bad Habits.mp3"
+    },
+    {
+        "name": "Shivers",
+        "artist": "Ed Sheeran",
+        "path": "http://localhost:9090/audio/Ed Sheeran - Shivers.mp3"
+    },
+    {
+        "name": "Cold Heart (PNAU Remix)",
+        "artist": "Elton John & Dua Lipa",
+        "path": "http://localhost:9090/audio/Elton John & Dua Lipa - Cold Heart (PNAU Remix).mp3"
+    },
+    {
+        "name": "Pepas",
+        "artist": "Farruko",
+        "path": "http://localhost:9090/audio/Farruko - Pepas.mp3"
+    },
+    {
+        "name": "Love Nwantiti (Remix)",
+        "artist": "CKay feat Ax'el & DJ Yo",
+        "path": "http://localhost:9090/audio/love nwantiti (feat. Dj Yo! & AX'EL) (Remix).mp3"
+    },
+    {
+        "name": "Beggin'",
+        "artist": "Måneskin",
+        "path": "http://localhost:9090/audio/Måneskin - Beggin'.mp3"
+    },
+    {
+        "name": "Love Tonight (Official Radio Edit)",
+        "artist": "SHOUSE",
+        "path": "http://localhost:9090/audio/SHOUSE - Love Tonight (Official Radio Edit).mp3"
+    },
+    {
+        "name": "Jalebi Baby",
+        "artist": "Tesher x Jason Derulo",
+        "path": "http://localhost:9090/audio/Tesher x Jason Derulo - Jalebi Baby.mp3"
+    },
+    {
+        "name": "Take My Breath",
+        "artist": "The Weeknd",
+        "path": "http://localhost:9090/audio/The Weeknd - Take My Breath.mp3"
+    }
+]

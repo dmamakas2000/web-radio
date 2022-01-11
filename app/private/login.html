@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Author: Dimitrios Mamakas -->
+
+<head>
+    <!--Meta tags-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--Title-->
+	<title>Σύνδεση ως διαχειριστής</title>
+    <!--Shortcut icon-->
+    <link rel="shortcut icon" href="../images/hermis.png" type="image/png">
+    <!--Custom stylesheet-->
+    <link rel="stylesheet" href="../css/login.css">
+    <!--Bootstrap CSS-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!--Main section-->
+	<section class="h-100" style="margin-top: 10%">
+
+		<div class="container h-100">
+
+			<div class="row justify-content-md-center h-100">
+
+                <!--Image (Hermes logo)-->
+                <div class="brand">
+                    <img src="images/aueb.jpg" alt="logo" width="300px" height="300px">
+                </div>
+
+                <!--Form block-->
+				<div class="card-wrapper" style="width: 500px;">
+
+					<div class="card fat">
+
+						<div class="card-body">
+
+							<h4 class="card-title">Σύνδεση διαχειριστή</h4>
+							<form method="POST" class="my-login-validation" novalidate="" id="login-form">
+
+                                <!--Email-->
+								<div class="form-group">
+									<label for="email">Διεύθυνση e-mail</label>
+									<input id="email" type="email" class="form-control" name="email" value="" required autofocus placeholder="Παράδειγμα: p318xxxx@aueb.gr">
+									<div class="invalid-feedback">
+										Το e-mail δεν είναι έγκυρο
+									</div>
+								</div>
+
+                                <!--Password-->
+								<div class="form-group">
+									<label for="password">Κωδικός πρόσβασης										
+									</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye placeholder="Παρακαλώ πληκτρολογήστε τον κωδικό πρόσβασης">
+								    <div class="invalid-feedback">
+								    	Ο κωδικός απαιτείται
+							    	</div>
+								</div>
+
+                                <!--Remember me-->
+								<div class="form-group">
+									<div class="custom-checkbox custom-control">
+										<input type="checkbox" name="remember" id="customCheck1" class="custom-control-input">
+										<label for="customCheck1" class="custom-control-label">Να με θυμάσαι</label>
+									</div>
+								</div>
+
+                                <!--Login button-->
+								<div class="form-group m-0">
+									<button class="btn btn-primary btn-block" style="background-color: #762124; border: #762124;" onclick="fetchServerToAuthenticate();">
+										Σύνδεση
+									</button>
+								</div>
+								
+								<div class="form-group" id="error-message">									
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+
+                    <!--Copyrights section-->
+					<div class="footer" style="margin-top: 2%;">
+						Copyright &copy; 2021 &mdash; Athens University of Economics and Business 
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+    <!--Bootstrap Javascripts-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!--Custom Script-->
+	<script src="js/adminLogin.js"></script>
+
+</body>
+</html>

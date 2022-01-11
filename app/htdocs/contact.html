@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="el">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Επικοινωνία - AUEB WebRadio</title>
+		<link rel="shortcut icon" href="images/hermis.png" type="image/png">
+		<link type="text/css" rel="stylesheet" href="css/all.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-container row">
+				<div class="header-text">
+					<div class="header-image"><img src="images/logo.png" alt="AUEB Logo"></div>
+					<div class="header-title">AUEB WebRadio</div>
+				</div>
+			</div>
+		</div>
+		<div class="nav_menu">
+			<div class="nav_menu-container row">
+				<div class="mobile-menu-button" id="mobile_menu"><i class="fas fa-bars"></i> Μενού</div>
+				<ul id="menu_nav">
+					<li><a href="/">Αρχική</a></li>
+					<li><a href="/contact">Επικοινωνία</a></li>
+					<li><a href="/live">Ακούστε live</a></li>
+					<li><a href="/admin">Διαχείριση</a></li>
+					<li><a href="https://www.aueb.gr/" target="_blank">AUEB</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="main_content-container row">
+				<div class="page-title"><i class="far fa-envelope"></i> Επικοινωνία</div>
+				<div class="page-container">
+					<div class="contact-form">
+						<div class="contact-form-wrap">
+							<form class="my-login-validation" novalidate="" id="contact-form">
+								<!--Name-->
+								<div class="form-group">
+									<label for="name">Όνομα</label>
+									<input type="text" class="form-control" id="name" name="name" required autofocus placeholder="Το όνομά σας" autocomplete="off">
+									<div class="invalid-feedback">
+										Το όνομα απαιτείται
+									</div>
+								</div>
+								
+								<!--Email-->
+								<div class="form-group">
+									<label for="email">Διεύθυνση e-mail</label>
+									<input id="email" type="email" class="form-control" name="email" value="" required placeholder="Παράδειγμα: p318xxxx@aueb.gr" autocomplete="off">
+									<div class="invalid-feedback">
+										Το e-mail δεν είναι έγκυρο
+									</div>
+								</div>
+								
+								<!--Email-->
+								<div class="form-group">
+									<label for="message">Μήνυμα</label>
+									<textarea id="message" type="message" class="form-control" name="message" value="" required placeholder="Παρακαλώ πληκτρολογήστε το μήνυμά σας" autocomplete="off"></textarea>
+									<div class="invalid-feedback">
+										Το μήνυμα απαιτείται
+									</div>
+								</div>
+
+								<!--Send button-->
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary btn-block" style="background-color: #762124; border: #762124;" onclick="sendEmailDetailsIntoServer()">
+										Αποστολή
+									</button>
+								</div>
+								<div class="alert" role="alert" id="alert-message"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-container row">
+				© Copyright 2021 | Athens University of Economics and Business
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/mobile_menu.js"></script>
+		<script type="text/javascript" src="js/contact.js"></script>
+
+	</body>
+</html>

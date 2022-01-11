@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Prosorina",
+        "artist": "Christos Menidiatis",
+        "path": "http://localhost:9090/audio/prosorina-menidiatis.mp3"
+    },
+    {
+        "name": "Teleutaia Aggalia",
+        "artist": "Christos Menidiatis",
+        "path": "http://localhost:9090/audio/teleutaia_aggalia-menidiatis.mp3"
+    }
+]

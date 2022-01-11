@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Jingle 1",
+        "path": "http://localhost:9090/jingles/AuebWebRadio_ID1.mp3"
+    },
+    {
+        "name": "Jingle 2",
+        "path": "http://localhost:9090/jingles/AuebWebRadio_ID2.mp3"
+    },
+    {
+        "name": "Jingle 3",
+        "path": "http://localhost:9090/jingles/AuebWebRadio_ID3.mp3"
+    }
+]

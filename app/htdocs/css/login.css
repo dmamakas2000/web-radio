@@ -1,0 +1,45 @@
+/* ------------------------------ Author: Dimitrios Mamakas ------------------------------ */
+
+/* ------------------------------ Input override settings ------------------------------ */
+.form-control:focus {
+    border-color: #762124 !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(118, 33, 36, 0.6) !important;
+}
+
+/* ------------------------------ Button override settings ------------------------------ */
+button:active {
+    border-color: #762124 !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(118, 33, 36, 0.6) !important;
+}
+
+button:focus {
+    border-color: #762124 !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(118, 33, 36, 0.6) !important;
+}
+
+/* ------------------------------ Checkbox override settings ------------------------------ */
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #762124 !important;
+    border: none;
+}
+  
+.custom-checkbox .custom-control-input:checked:focus ~ .custom-control-label::before {
+    box-shadow: none;
+    border: none;
+}
+
+.custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+    border: none;
+}
+
+.custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
+    background-color: #762124;
+}
+
+#message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 700;
+    color: #1bbb19;
+}

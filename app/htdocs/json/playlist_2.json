@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Chop Suey",
+        "artist": "System Of A Down",
+        "path": "http://localhost:9090/audio/chop-suey.mp3"
+    },
+    {
+        "name": "Fear of the dark",
+        "artist": "Iron Maiden",
+        "path": "http://localhost:9090/audio/fear-of-the-dark.mp3"
+    },
+    {
+        "name": "Warriors of the word",
+        "artist": "Manowar",
+        "path": "http://localhost:9090/audio/warriors-of-the-word.mp3"
+    }
+]

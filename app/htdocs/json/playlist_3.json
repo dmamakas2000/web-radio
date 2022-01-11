@@ -1,0 +1,17 @@
+[
+    {
+        "name": "The Sky is Crying",
+        "artist": "Gary B.B. Coleman",
+        "path": "http://localhost:9090/audio/the-sky-is-crying.mp3"
+    },
+    {
+        "name": "It is a man's world",
+        "artist": "James Brown",
+        "path": "http://localhost:9090/audio/mans-word.mp3"
+    },
+    {
+        "name": "Praha Jazz Cafe",
+        "artist": "Old Jazz Cafe - Topic",
+        "path": "http://localhost:9090/audio/praha-jazz-cafe.mp3"
+    }
+]

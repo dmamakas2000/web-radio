@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Highway to hell",
+        "artist": "AC/DC",
+        "path": "http://localhost:9090/audio/highway-to-hell.mp3"
+    },
+    {
+        "name": "Welcome to the jungle",
+        "artist": "Guns N' Roses",
+        "path": "http://localhost:9090/audio/jungle.mp3"
+    },
+    {
+        "name": "Knocking on heaven's door",
+        "artist": "Guns N' Roses",
+        "path": "http://localhost:9090/audio/knocking-on-heavens-door.mp3"
+    },
+    {
+        "name": "Living on a player",
+        "artist": "Bon Jovi",
+        "path": "http://localhost:9090/audio/living-on-a-player.mp3"
+    },
+    {
+        "name": "Paradise city",
+        "artist": "Guns N' Roses",
+        "path": "http://localhost:9090/audio/paradise-city.mp3"
+    },
+    {
+        "name": "Summer of 69",
+        "artist": "Bryan Adams",
+        "path": "http://localhost:9090/audio/summer-69.mp3"
+    },
+    {
+        "name": "Sweet home Alabama",
+        "artist": "Lynyrd Skynyrd",
+        "path": "http://localhost:9090/audio/sweet-home-alabama.mp3"
+    },
+    {
+        "name": "The final countdown",
+        "artist": "Europe",
+        "path": "http://localhost:9090/audio/the-final-countdown.mp3"
+    }
+]

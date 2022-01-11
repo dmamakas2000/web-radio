@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="el">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Live - AUEB WebRadio</title>
+		<link rel="shortcut icon" href="images/hermis.png" type="image/png">
+		<link type="text/css" rel="stylesheet" href="css/all.css">
+		<link type="text/css" rel="stylesheet" href="css/live.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+		<script defer src="http://localhost:9898/socket.io/socket.io.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-container row">
+				<div class="header-text">
+					<div class="header-image"><img src="images/logo.png" alt="AUEB Logo"></div>
+					<div class="header-title">AUEB WebRadio</div>
+				</div>
+			</div>
+		</div>
+		<div class="nav_menu">
+			<div class="nav_menu-container row">
+				<div class="mobile-menu-button" id="mobile_menu"><i class="fas fa-bars"></i> Μενού</div>
+				<ul id="menu_nav">
+					<li><a href="/">Αρχική</a></li>
+					<li><a href="/contact">Επικοινωνία</a></li>
+					<li><a href="/live">Ακούστε live</a></li>
+					<li><a href="/admin">Διαχείριση</a></li>
+					<li><a href="https://www.aueb.gr/" target="_blank">AUEB</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!--Playlist main content-->
+		<div class="main_content">
+			<div class="main_content-container row">
+				<div class="page-title"><i class="fas fa-broadcast-tower"></i> Live</div>
+				<div class="page-container">
+					<div class="live-logo"><img src="images/aueb.jpg" alt="AUEB Logo"></div>
+					<div class="live-content">
+						<div class="live-button" id="live" onclick="playPause()"><i class="fas fa-play"></i></div>
+						<div class="live-description" id="liveD">
+							<div class="live-title" id="liveD">Τώρα παίζει</div>
+							<div class="live-now" id="liveS"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--Chat section -->
+			<div class="container content">
+				<div class="row">
+					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+						<div class="card">
+							<div class="card-header"><i class="fas fa-comments"></i> Chat</div>
+							<div class="card-body height3">								
+								<ul class="chat-list" id="chat-list-root-element">
+									<div id="messages-section">
+										<h3>This is the beginning of the chat</h3>
+									</div>
+									<li class="in">
+										<div class="chat-img">
+											<img alt="Avtar" src="images/logo.png">
+										</div>
+										<!-- Testing code -->
+										<div class="publisher bt-1 border-light"> 				
+											<input class="publisher-input" id="send-message-input" type="text" placeholder="Πληκτρολογήστε το μήνυμα σας"> 
+											<a class="publisher-btn" href="#" data-abc="true"></a> 
+											<a class="publisher-btn text-info" href="#" data-abc="true">
+												<i class="fa fa-paper-plane" onclick="handleSendButtonPressed()"></i>
+											</a> 
+										</div>
+										<!-- End of testing code -->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End of chat section -->
+		</div>
+
+		<div class="footer">
+			<div class="footer-container row">
+				© Copyright 2021 | Athens University of Economics and Business
+			</div>
+		</div>
+		<script type="text/javascript" src="js/mobile_menu.js"></script>
+		<script type="text/javascript" src="js/radio.js"></script>
+		<script type="text/javascript" src="js/live.js"></script>
+		<script defer type="text/javascript" src="js/chat.js"></script>
+	</body>
+</html>

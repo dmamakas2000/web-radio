@@ -1,0 +1,42 @@
+[
+    {
+        "name": "McDonalds",
+        "path": "http://localhost:9090/ads/McDonalds.mp3"
+    },
+	{
+        "name": "Modivo.gr",
+        "path": "http://localhost:9090/ads/ModivoGR.mp3"
+    },
+	{
+        "name": "Bwin",
+        "path": "http://localhost:9090/ads/Bwin.mp3"
+    },
+	{
+        "name": "Cosmote TV",
+        "path": "http://localhost:9090/ads/CosmoteTV.mp3"
+    },
+	{
+        "name": "Hondos Center",
+        "path": "http://localhost:9090/ads/HondosCenter.mp3"
+    },
+	{
+        "name": "Isomat",
+        "path": "http://localhost:9090/ads/Isomat.mp3"
+    },
+	{
+        "name": "Masoutis",
+        "path": "http://localhost:9090/ads/Masoutis.mp3"
+    },
+	{
+        "name": "Mollers",
+        "path": "http://localhost:9090/ads/Mollers.mp3"
+    },
+	{
+        "name": "WATT+VOLT",
+        "path": "http://localhost:9090/ads/WATT+VOLT.mp3"
+    },
+	{
+        "name": "Fonbet",
+        "path": "http://localhost:9090/ads/Fonbet.mp3"
+    }
+]

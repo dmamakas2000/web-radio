@@ -1,0 +1,365 @@
+body {
+    margin: 0px;
+    min-width: 330px;
+	font-family: 'Open Sans', sans-serif;
+    color: #fff;
+	background-image: url(../images/bg.jpg);
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+}
+
+.row {
+	margin: 0 auto;
+    width: 1320px;
+}
+
+.header {
+    background: #762124;
+    color: #ffffff;
+}
+
+.nav_menu {
+    background: #fff;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_menu ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav_menu ul a {
+    text-decoration: none;
+    color: #762124;
+    font-size: 18px;
+    padding: 10px 15px;
+    font-weight: 700;
+    transition: color .2s ease-in-out;
+}
+
+.nav_menu ul a:hover, .mobile-menu-button:hover {
+    color: #000;
+}
+
+.main_content {
+    background: #ffffff30;
+    backdrop-filter: blur(8px);
+    min-height: 100vh;
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.header-image {
+    margin-right: 15px;
+    height: 70px;
+}
+
+.header-image img {
+    height: 100%;
+    width: auto;
+}
+
+.header-title {
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.main_content-container {
+    padding: 20px 0;
+}
+
+.main_content-container p {
+    text-align: center;
+}
+
+.footer {
+    background: #000;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.page-title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 50px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.live-logo img {
+    border-radius: 10%;
+    width: 250px;
+}
+
+.live-content {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.live-button {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    color: #762124;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: color .17s ease-in-out, background .17s ease-in-out;
+}
+
+.live-button:hover {
+    background: #000;
+    color: #fff;
+}
+
+.live-description {
+    margin-top: 20px;
+    text-align: center;
+	display: none;
+}
+
+.live-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: .3;
+    color: #ffffff;
+}
+
+.live-now {
+    font-size: 18px;
+}
+
+.contact-form {
+    width: 50%;
+}
+
+.contact-form-wrap {
+    padding: 1.25rem;
+    background: #ffffff30;
+    border-radius: 10px;
+    border: 1px solid #ffffff26;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    display: block;
+    width: calc(100% - 26px);
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+button, input {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.form-control:focus {
+    border-color: #762124 !important;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(118 33 36 / 60%) !important;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #762124;
+    border-color: #762124;
+    text-decoration: none;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+button:active {
+    border-color: #762124 !important;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(118 33 36 / 60%) !important;
+}
+
+textarea {
+    min-height: 100px;
+    max-width: calc(100% - 26px);
+    min-width: calc(100% - 26px);
+}
+
+.nav_menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mobile-menu-button {
+    color: #762124;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 1340px) {
+
+    .row {
+        width: calc(100% - 40px);
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    .contact-form {
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+	
+	.nav_menu {
+		height: unset;
+	}
+	
+	#menu_nav {
+		display: none;
+	}
+	
+	.nav_menu ul {
+		flex-direction: column;
+		width: 100%;
+		border-top: 2px solid #762124;
+	}
+	
+	.nav_menu ul li {
+		display: flex;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	
+	.header-image {
+		height: 55px;
+	}
+
+    .header-title {
+		font-size: 25px;
+	}
+	
+	.page-title {
+		font-size: 35px;
+		margin-top: 10px;
+		margin-bottom: 35px;
+	}
+	
+	.live-logo img {
+		width: 200px;
+	}
+	
+	.live-button {
+		width: 80px;
+		height: 80px;
+		font-size: 30px;
+	}
+
+}
