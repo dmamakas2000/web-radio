@@ -1,5 +1,0 @@
-# Ignore posting the node modules
-node_modules/
-
-# Ignore posting the tracks initially
-app/htdocs/tracks
