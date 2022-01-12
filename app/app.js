@@ -5,7 +5,6 @@ const path = require('path');
 const sessions = require('express-session');
 const cookieParser = require("cookie-parser");
 const app = express();
-const execSync = require('child_process').execSync;
 
 // Initializations
 var jingles = require('./htdocs/json/jingles.json');

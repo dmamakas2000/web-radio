@@ -8,5 +8,40 @@
         "name": "Teleutaia Aggalia",
         "artist": "Christos Menidiatis",
         "path": "http://localhost:9090/audio/teleutaia_aggalia-menidiatis.mp3"
+    },
+    {
+        "name": "Dynata (Ta Ta Ta)",
+        "artist": "Stefanos Pitsiniagas",
+        "path": "http://localhost:9090/audio/ta-ta-ta.mp3"
+    },
+    {
+        "name": "Exo Esena",
+        "artist": "REC",
+        "path": "http://localhost:9090/audio/rec-esena.mp3"
+    },
+    {
+        "name": "Kai se thymamai",
+        "artist": "REC",
+        "path": "http://localhost:9090/audio/rec-se-thymamai.mp3"
+    },
+    {
+        "name": "Tosa Vradia",
+        "artist": "Giorgos Mazonakis",
+        "path": "http://localhost:9090/audio/tosa-vradia.mp3"
+    },
+    {
+        "name": "Paraskeui Proi",
+        "artist": "Kostantinos Argiros",
+        "path": "http://localhost:9090/audio/paraskeui-proi.mp3"
+    },
+    {
+        "name": "To Fili Tis Zois",
+        "artist": "Helena Paparizou",
+        "path": "http://localhost:9090/audio/fili-zois.mp3"
+    },
+    {
+        "name": "Mporei",
+        "artist": "Mad Clip ft. Eleni Foureira",
+        "path": "http://localhost:9090/audio/mporei.mp3"
     }
 ]
