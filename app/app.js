@@ -117,17 +117,17 @@ app.get("/get/time", (req, res) => {
 
 // Get playlist endpoint
 app.get("/get/playlist", (req, res) => {
-	playlistToStream = streamPlaylist['playlist_id'];
+	let jsonData = JSON.parse(fs.readFileSync('./htdocs/stream/stream-playlist.json', 'utf-8'));
 
-	if (playlistToStream == 1) {
+	if (jsonData.playlist_id == 1) {
 		res.status(200).send(playlist_1);
-	} else if (playlistToStream == 2) {
+	} else if (jsonData.playlist_id == 2) {
 		res.status(200).send(playlist_2);
-	} else if (playlistToStream == 3) {
+	} else if (jsonData.playlist_id == 3) {
 		res.status(200).send(playlist_3);
-	} else if (playlistToStream == 4) {
+	} else if (jsonData.playlist_id == 4) {
 		res.status(200).send(playlist_4);
-	} else if (playlistToStream == 5) {
+	} else if (jsonData.playlist_id == 5) {
 		res.status(200).send(playlist_5);
 	}
 });

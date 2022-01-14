@@ -136,7 +136,8 @@ function getStreamSettings() {
 	
 	fetch(url, init)
 		.then(response => response.json() )
-		.then(obj => {				
+		.then(obj => {		
+				console.log(obj);		
 				if (obj.random_tracks == "yes") {
 					tracksAreRandom = true;
 				}
@@ -152,6 +153,10 @@ function getStreamSettings() {
 		.catch(error => {
 			console.log(error)
 		})
+		sleep(1000).then(() => {
+			// Do nothing
+		});
+		
 }
 
 /*
