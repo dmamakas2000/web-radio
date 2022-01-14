@@ -7,7 +7,7 @@
     {
         "name": "Ocean",
         "artist": "Ali Bakgor, Kállay Saunders",
-        "path": "http://localhost:9090/audio/Ali Bakgor, Kállay Saunders - Ocean.mp3"
+        "path": "http://localhost:9090/audio/Ali Bakgor, Kallay Saunders - Ocean.mp3"
     },
     {
         "name": "Love Again",
@@ -42,7 +42,7 @@
     {
         "name": "Beggin'",
         "artist": "Måneskin",
-        "path": "http://localhost:9090/audio/Måneskin - Beggin'.mp3"
+        "path": "http://localhost:9090/audio/Maneskin - Beggin'.mp3"
     },
     {
         "name": "Love Tonight (Official Radio Edit)",
