@@ -20,6 +20,7 @@ const portApp = 9090;
 // Host static files
 app.use('/app/htdocs/tracks/jingles', express.static('public'));
 app.use('/app/htdocs/tracks/ads', express.static('public'));
+app.use('/app/htdocs/tracks/time', express.static('public'));
 app.use('/app/htdocs/tracks/playlist-1', express.static('public'));
 app.use('/app/htdocs/tracks/playlist-2', express.static('public'));
 app.use('/app/htdocs/tracks/playlist-3', express.static('public'));
@@ -123,6 +124,40 @@ app.get("/jingles/:name", (req, res) => {
 // Ads play endpoint
 app.get("/ads/:name", (req, res) => {
   const INPUT = "http://localhost:8080/tracks/ads/" + req.params.name;
+  axios
+    .get(INPUT, {
+      responseType: "stream",
+      adapter: httpAdapter,
+      "Content-Range": "bytes 16561-8065611",
+    })
+    .then((Response) => {
+      const stream = Response.data;
+
+      res.set("content-type", "audio/mp3");
+      res.set("accept-ranges", "bytes");
+      res.set("content-length", Response.headers["content-length"]);
+      console.log(Response);
+
+      stream.on("data", (chunk) => {
+        res.write(chunk);
+      });
+
+      stream.on("error", (err) => {
+        res.sendStatus(404);
+      });
+
+      stream.on("end", () => {
+        res.end();
+      });
+    })
+    .catch((Err) => {
+      console.log(Err.message);
+    });
+});
+
+// Time play endpoint
+app.get("/time/:name", (req, res) => {
+  const INPUT = "http://localhost:8080/tracks/time/" + req.params.name;
   axios
     .get(INPUT, {
       responseType: "stream",

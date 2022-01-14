@@ -22,6 +22,8 @@ const TOKEN = "https://accounts.spotify.com/api/token";
 Handles the case when page loads.
 */
 function onPageLoad() {
+	getStreamSettings();
+	
     if ( window.location.search.length > 0 ) {
         // URL contains more than 0 parameters, so continue to authorization
         handleRedirect();
@@ -155,20 +157,89 @@ function logout() {
     window.location.href = "/logout";
 }
 
+function getStreamSettings() {
+	let url = "/get/stream_settings";
+	
+	let myHeaders = new Headers();
+	myHeaders.append('Accept', 'application/json');
+
+	let init = {
+		method: "GET",
+		headers: myHeaders
+	}
+	
+	fetch(url, init)
+		.then(response => response.json() )
+		.then(obj => {
+				document.getElementById("music-genre").value = obj.playlist_id;
+				
+				if (obj.random_tracks == "yes") {
+					document.getElementById("randomTracks").checked = true;
+				}
+				else {
+					document.getElementById("randomTracks").checked = false;
+				}
+				
+				if (obj.ads == "yes") {
+					document.getElementById("adsChoice").checked = true;
+				}
+				else {
+					document.getElementById("adsChoice").checked = false;
+				}
+				
+				if (obj.time_announcement == "yes") {
+					document.getElementById("timeAnnouncement").checked = true;
+				}
+				else {
+					document.getElementById("timeAnnouncement").checked = false;
+				}
+		})
+		.catch(error => {
+			console.log(error)
+		})
+}
+
 function changePlaylistId() {
 	var selectedPlaylist = document.getElementById("music-genre");
 	var playlistId = selectedPlaylist.value;
-    
-    // Fetch the POST endpoint and send the data
-    fetch('http://localhost:8080/playlist/'+playlistId, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin" : "*", 
-            "Access-Control-Allow-Credentials" : "true"
-        }
-	})
 	
-	document.getElementById("message").innerHTML = "Οι αλλαγές πραγματοποιήθηκαν!";
+	var randomTracks = "no";
+	if (document.getElementById("randomTracks").checked) {
+		console
+		randomTracks = "yes";
+	}
+	
+	var adsChoice = "no";
+	if (document.getElementById("adsChoice").checked) {
+		adsChoice == "yes";
+	}
+	
+	var timeAnnouncement = "no";
+	if (document.getElementById("timeAnnouncement").checked) {
+		timeAnnouncement == "yes";
+	}
+	
+	let obj = JSON.stringify({playlist_id: playlistId, random_tracks: randomTracks, ads: adsChoice, time_announcement: timeAnnouncement});
+
+	let myHeaders = new Headers();
+	myHeaders.append('Content-Type', 'application/json');
+	
+	let init = {
+		method: "POST",
+		headers: myHeaders,
+		body: obj
+	}
+	
+	let url = "/stream_settings";
+	
+	fetch(url, init)
+		.then(response => {
+			if (response.status == 200) {
+				document.getElementById("message").innerHTML = "Οι αλλαγές πραγματοποιήθηκαν!";
+			}
+		})
+		.catch(error => {
+			console.log(error)
+		})
+		
 }

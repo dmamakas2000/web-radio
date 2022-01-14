@@ -6,6 +6,20 @@ const songDescription = document.getElementById("liveD");
 const liveSongPlaying = document.getElementById("liveS");
 
 /*
+Current date and time.
+*/
+let date;
+let curr_time;
+let prev_time = '';
+
+/*
+Stream settings.
+*/
+let tracksAreRandom = false;
+let playAds = false;
+let playTime = false;
+
+/*
 Max number of all numbers to be generated randomly.
 */
 var numRandoms;
@@ -20,7 +34,7 @@ var jingleRandoms = [];
 var adRandoms = [];
 
 /*
-Boolean variable indicating if the next sound to be streamed should be a track (0), a jingle (1) or an ad (2).
+Boolean variable indicating if the next sound to be streamed should be a track (0), a jingle (1), an ad (2), or a time announcement (3).
 */
 var comingNext = 0;
 
@@ -30,6 +44,7 @@ Track index which is currently playing.
 let track_index = 0;
 let jingle_index = 0;
 let ad_index = 0;
+let time_index = -1;
 
 /*
 Boolean variable indicating if a song is currently playing.
@@ -42,6 +57,7 @@ Current playlist.
 var playlist;
 var jingles;
 var ads;
+var time;
 
 /*
 Server's URL used in order to get the current playlist choosed by the administrator.
@@ -59,6 +75,11 @@ Server's URL used in order to get the ads used to be streamed between tracks.
 const SERVER_APP_ADS = "http://localhost:8080/get/ads";
 
 /*
+Server's URL used in order to get the time announcements used to be streamed every hour.
+*/
+const SERVER_APP_TIME = "http://localhost:8080/get/time";
+
+/*
 New audio element.
 */
 let curr_track = document.createElement('audio');
@@ -70,6 +91,8 @@ window.onload = function() {
     getPlaylistFromServer();
 	getJinglesFromServer();
 	getAdsFromServer();
+	getTimeFromServer();
+	getStreamSettings();
 
     /*
     Load the first track in the tracklist
@@ -78,7 +101,9 @@ window.onload = function() {
         // Song to start
         console.log("The playlist we should play now is: ");
         console.log(JSON.stringify(playlist, null, 2));
-		track_index = makeUniqueRandom(uniqueRandoms, numRandoms);
+		if (tracksAreRandom) {
+			track_index = makeUniqueRandom(uniqueRandoms, numRandoms);
+		}
         // Loads the first track
 		loadTrack(track_index);
     });
@@ -89,6 +114,44 @@ Sleep time expects milliseconds.
 */
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+/*
+Gets stream settings from server.
+*/
+function getStreamSettings() {
+	let url = "/get/stream_settings";
+	
+	let myHeaders = new Headers();
+
+	let init = {
+		method: "GET",
+		headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin" : "*", 
+            "Access-Control-Allow-Credentials" : "true"
+        }
+	}
+	
+	fetch(url, init)
+		.then(response => response.json() )
+		.then(obj => {				
+				if (obj.random_tracks == "yes") {
+					tracksAreRandom = true;
+				}
+				
+				if (obj.ads == "yes") {
+					playAds = true;
+				}
+				
+				if (obj.time_announcement == "yes") {
+					playTime = true;
+				}
+		})
+		.catch(error => {
+			console.log(error)
+		})
 }
 
 /*
@@ -137,10 +200,32 @@ function getJinglesFromServer() {
 }
 
 /*
+Gets the time announcements playlist returned from the server (app.js).
+*/
+function getTimeFromServer() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            time = JSON.parse(this.responseText);
+        }
+    };
+	xhttp.open("GET", SERVER_APP_TIME, true);
+	xhttp.send();
+}
+
+/*
 Prepares next track for loading.
 */
 function loadTrack(track_id) {
-    comingNext = Math.floor(Math.random() * 2) + 1; //random integer from 1 to 2
+	if (!playTime) {
+		comingNext = 2;
+		if (!playAds) {
+			comingNext = 1;
+		}
+	}
+	else {
+		comingNext = 3;
+	}
     curr_track.src = playlist[track_id].path;
 	curr_track.load();
 	curr_track.addEventListener("ended", nextTrack);
@@ -187,9 +272,73 @@ function nextTrack() {
             pause();
         }
     }
+    else if (comingNext == 3) {
+		if (playAds) {
+			comingNext = Math.floor(Math.random() * 2) + 1; //random integer from 1 to 2
+		}
+		else {
+			comingNext = 1;
+		}
+		
+		date = new Date();
+		curr_time = (date.getHours()<10?'0':'') + date.getHours() + ":" + (date.getMinutes()<10?'0':'') + date.getMinutes();
+		
+		var found_time = false;
+		var hour;
+		var min;
+		for (let i = 0; i < time.length; i = i + 2) {
+			hour = parseInt(time[i].time.split(':')[0]);
+			min = parseInt(time[i].time.split(':')[1]);
+			if (hour == date.getHours()) {
+				
+				if (date.getMinutes() >= 57 && date.getMinutes() <= 59) {
+					time_index = i+2;
+					if (hour == 23) {
+						time_index = 0;
+					}
+				}
+				else if (date.getMinutes() >= 0 && date.getMinutes() <= 3) {
+					time_index = i;
+				}
+				else if (date.getMinutes() >= 27 && date.getMinutes() <= 33) {
+					time_index = i+1;
+				}
+				
+				if (time_index != -1) {
+					if (prev_time != time[time_index].time) {
+						prev_time = time[time_index].time;
+						found_time = true;
+						break;
+					}
+				}
+			}
+		}
+		
+		if (found_time) {
+			var prev_track_muted = curr_track.muted;
+			curr_track.src = time[time_index].path;
+			curr_track.load();
+			curr_track.addEventListener("ended", nextTrack);
+			
+			play();
+			if (prev_track_muted == true) {
+				pause();
+			}
+		}
+		else {
+			nextTrack();
+		}
+    }
 	else {
-        track_index = makeUniqueRandom(uniqueRandoms, numRandoms);
-
+		if (tracksAreRandom) {
+			track_index = makeUniqueRandom(uniqueRandoms, numRandoms);
+		}
+		else {
+			if (track_index < playlist.length - 1)
+			  track_index += 1;
+			else track_index = 0;
+		}
+	
         var prev_track_muted = curr_track.muted;
 	    loadTrack(track_index);
         
@@ -219,7 +368,7 @@ function play() {
     isPlaying = true;
     curr_track.muted = false;
     songDescription.style.display = "block";
-    liveSongPlaying.innerHTML = playlist[track_index].name + " - " + playlist[track_index].artist;
+    liveSongPlaying.innerHTML = playlist[track_index].artist + " - " + playlist[track_index].name;
     playPauseButton.innerHTML = '<i class="fas fa-stop"></i>';
 }
 

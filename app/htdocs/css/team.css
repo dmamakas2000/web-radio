@@ -1,0 +1,106 @@
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
+@import 'https://fonts.googleapis.com/css?family=Raleway:100,600';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300';
+
+
+
+.team-area{
+  margin-top: 50px;
+}
+
+.col-md-3{
+  height: 570px;
+  width: 440px;
+}
+
+.single-team .team-img .team-content .team-info{
+  height: 600px;
+}
+
+.section-title h2{
+  text-transform: uppercase;
+  text-align: center;
+}
+.section-title{
+  margin: 3% 0;
+}
+.section-title p{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+.single-team{
+  width: 390px;
+  padding-bottom: 90px;
+  margin: auto;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 10px 10px 20px #0000009c;
+  border-radius: 10px;
+  
+}
+.team-img{
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+.team-img img{
+  width: 100%;
+  transition: 0.3s;
+}
+.single-team:hover .team-img img{
+  transform: scale(1,1);
+}
+.team-info{
+  color: white;
+}
+.team-text{
+  color: white;
+}
+.team-content{
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  overflow: hidden;
+  bottom: 0;
+  transition: all 0.4s;
+  background: #762124;
+  z-index: 5;
+}
+.single-team:hover .team-content{
+  height: 150px;
+}
+.team-info{
+  padding: 5px 20px 5px 20px;
+  transition: all .5s;
+}
+.single-team:hover .team-content{
+  background: black;
+}
+.single-team .team-content .team-info h3{
+  text-transform: uppercase;
+  color: white;
+  font-size: 16px;
+  margin: 15px;
+}
+.single-team:hover .team-info h3{
+  color: 762124;
+  font-weight: bold;
+}
+.team-info p{
+  margin-top: 15px;
+  color: white
+}
+
+@media screen and (max-width: 1060px) {
+	.team-area {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}

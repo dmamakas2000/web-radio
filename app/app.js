@@ -9,6 +9,7 @@ const app = express();
 // Initializations
 var jingles = require('./htdocs/json/jingles.json');
 var ads = require('./htdocs/json/ads.json');
+var time = require('./htdocs/json/time.json');
 var playlist_1 = require('./htdocs/json/playlist_1.json');
 var playlist_2 = require('./htdocs/json/playlist_2.json');
 var playlist_3 = require('./htdocs/json/playlist_3.json');
@@ -104,9 +105,14 @@ app.get("/get/jingles", (req, res) => {
 	res.status(200).send(jingles);
 });
 
-// Get adds endpoint
+// Get ads endpoint
 app.get("/get/ads", (req, res) => {
 	res.status(200).send(ads);
+});
+
+// Get time endpoint
+app.get("/get/time", (req, res) => {
+	res.status(200).send(time);
 });
 
 // Get playlist endpoint
@@ -153,6 +159,14 @@ app.post('/auth/login', function (req, res) {
 	}
 });
 
+// Get stream settings from server
+app.get('/get/stream_settings', function (req, res) {
+	var fileName = './htdocs/stream/stream-playlist.json';
+	var file = require(fileName);
+	res.header("Content-Type",'application/json');
+	res.send(JSON.stringify(file));
+});
+
 // Slug
 app.get('/:slug?', function (req, res) { 
 	slug = req.params.slug;
@@ -165,13 +179,13 @@ app.get('/:slug?', function (req, res) {
 	res.sendFile(slug+'.html', options, function(err){
 		// console.log(err)
 	});
-})
+});
 
 // Write to playlist endpoint
-app.post('/playlist/:id', function (req, res) {
+app.post('/stream_settings', function (req, res) {
 	var fileName = './htdocs/stream/stream-playlist.json';
 	var file = require(fileName);
-	file.playlist_id = req.params.id;
+	file = req.body;
     
 	fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
 		if (err) return console.log(err);

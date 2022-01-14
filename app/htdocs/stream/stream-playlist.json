@@ -1,3 +1,6 @@
 {
-  "playlist_id": "5"
+  "playlist_id": "5",
+  "random_tracks": "yes",
+  "ads": "yes",
+  "time_announcement": "yes"
 }

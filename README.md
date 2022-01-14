@@ -1,4 +1,4 @@
-# Web Radio - PolymesaFm.gr
+# AUEB WebRadio (for educational purposes)
 
 <br>
 

@@ -16,8 +16,10 @@
 		<div class="header">
 			<div class="header-container row">
 				<div class="header-text">
-					<div class="header-image"><img src="images/logo.png" alt="AUEB Logo"></div>
-					<div class="header-title">AUEB WebRadio</div>
+					<a href="/">
+						<div class="header-image"><img src="images/logo.png" alt="AUEB Logo"></div>
+						<div class="header-title">AUEB WebRadio</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -34,69 +36,107 @@
 			</div>
 		</div>
 		<div class="main_content">
+				<body1>
+				<!--Image Slider begining-->
+				<div class="slider">
+					<div class="slides">
+						<!--radio buttons start-->
+						<input type="radio" name="radio-btn" id="radio1">
+						<input type="radio" name="radio-btn" id="radio2">
+						<input type="radio" name="radio-btn" id="radio3">
+						<input type="radio" name="radio-btn" id="radio4">
+						<!--radio buttons end-->
+						<!--slide images start-->
+						<div class="slide first">
+							<img src="images/slideshow/studio.jpg" alt="">
+						</div>
+						<div class="slide">
+							<img src="images/slideshow/mic.jpg" alt="">
+						</div>
+						<div class="slide">
+							<img src="images/slideshow/piano.jpg" alt="">
+						</div>
+						<div class="slide">
+							<img src="images/slideshow/onAir.jpg" alt="">
+						</div>
+						<!--slide images end-->
+						<!--automatic nav start-->
+						<div class="navigation-auto">
+							<div class="auto-btn1"></div>
+							<div class="auto-btn2"></div>
+							<div class="auto-btn3"></div>
+							<div class="auto-btn4"></div>
+						</div>
+						<!--automatic nav end-->
+					</div>
+					<!--manual nav start-->
+					<div class="navigation-manual">
+						<label for="radio1" class="manual-btn"></label>
+						<label for="radio2" class="manual-btn"></label>
+						<label for="radio3" class="manual-btn"></label>
+						<label for="radio4" class="manual-btn"></label>
+					</div>
+					<!--manual nav end-->
+				</div>
+				<!--Image Slider ending-->
+
+				<script type="text/javascript">
+					var counter =1;
+					setInterval(function(){
+						document.getElementById('radio' + counter).checked = true;
+						counter++;
+						if(counter >4){
+							counter =1;
+						}
+					}, 5000);
+				</script>
+			</body1>
+		
 			<div class="main_content-container row">
-				<div class="page-container">
-					Το νέο ραδιόφωνο του Οικονομικού Πανεπιστημίου Αθηνών!
-				</div>
-			</div>
 
-			<div>
-				<h1 style="text-align: center;">Γνωρίστε την ομάδα:</h1>
-			</div>
-
-			<div class="row">
-				<div class="column">
-				  <div class="card">
-					<img src="images/pappas.jpg" alt="Jane" style="width:100%">
-					<div class="container">
-					  <h2>Γιώργος</h2>
-					  <p class="title">Μέλος</p>
-					  <p>Οικονομικό Πανεπιστήμιο Αθηνών</p>
-					  <p>p3180152@aueb.gr</p>
-					  <p><button class="button" id="info-button" onclick="navigateToContactPage()">Επικοινωνία</button></p>
+				<!--Hover Boxes begining-->
+				<div class="container1" >
+					<div class="box"  onclick="navigateToTeamPage()">
+						<div class="icon"><i class="fas fa-users">
+						</i></div>
+						<div class="content">
+							<h3>           The Team               </h3>
+							<p>         Γνωρίστε την ομάδα πίσω από το ραδιόφωνο του ΟΠΑ!         </p>
+						</div>
 					</div>
-				  </div>
-				</div>
-			  
-				<div class="column">
-				  <div class="card">
-					<img src="images/nanos.jpg" alt="Mike" style="width:100%">
-					<div class="container">
-					  <h2>Μιχάλης</h2>
-					  <p class="title">Μέλος</p>
-					  <p>Οικονομικό Πανεπιστήμιο Αθηνών</p>
-					  <p>p3180125@aueb.gr</p>
-					  <p><button class="button" id="info-button" onclick="navigateToContactPage()">Επικοινωνία</button></p>
+						
+		
+					<div class="box" onclick="navigateToSchedulePage()">
+						<div class="icon"><i class="far fa-calendar-alt"></i>
+						</i></div>
+						<div class="content">
+							<h3>           Radio Playlist Schedule               </h3>
+							<p>         Μείνετε συντονισμένοι με το live πρόγραμμα μας!        </p>
+						</div>
 					</div>
-				  </div>
 				</div>
-				
-				<div class="column">
-				  <div class="card">
-					<img src="images/mamakas.jpg" alt="John" style="width:100%">
-					<div class="container">
-					  <h2>Δημήτρης</h2>
-					  <p class="title">Μέλος</p>
-					  <p>Οικονομικό Πανεπιστήμιο Αθηνών</p>
-					  <p>p3180102@aueb.gr</p>
-					  <p><button class="button" id="info-button" onclick="navigateToContactPage()">Επικοινωνία</button></p>
-					</div>
-				  </div>
-				</div>
-			  </div>
-
+				<!--Hover Boxes ending-->
 		</div>
 		<div class="footer">
 			<div class="footer-container row">
-				© Copyright 2021 | Athens University of Economics and Business
+				© Copyright 2022 | Athens University of Economics and Business
 			</div>
 		</div>
 		<script type="text/javascript" src="js/mobile_menu.js"></script>
 
 		<script>
+			function navigateToSchedulePage(){
+				window.location = "schedule.html";
+			}
+
+			function navigateToTeamPage(){
+				window.location = "team.html";
+			}
+
 			function navigateToContactPage() {
 				window.location = "contact.html";
 			}
 		</script>
+
 	</body>
 </html>
