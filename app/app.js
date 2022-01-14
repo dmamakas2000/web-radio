@@ -191,6 +191,7 @@ app.post('/stream_settings', function (req, res) {
 		if (err) return console.log(err);
 		console.log(JSON.stringify(file, null, 2));
 		console.log('writing to ' + fileName);
+		res.sendStatus(200);
 	});
 });
 

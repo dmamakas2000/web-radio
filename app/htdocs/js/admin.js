@@ -205,18 +205,17 @@ function changePlaylistId() {
 	
 	var randomTracks = "no";
 	if (document.getElementById("randomTracks").checked) {
-		console
 		randomTracks = "yes";
 	}
 	
 	var adsChoice = "no";
 	if (document.getElementById("adsChoice").checked) {
-		adsChoice == "yes";
+		adsChoice = "yes";
 	}
 	
 	var timeAnnouncement = "no";
 	if (document.getElementById("timeAnnouncement").checked) {
-		timeAnnouncement == "yes";
+		timeAnnouncement = "yes";
 	}
 	
 	let obj = JSON.stringify({playlist_id: playlistId, random_tracks: randomTracks, ads: adsChoice, time_announcement: timeAnnouncement});
