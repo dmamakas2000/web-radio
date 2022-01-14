@@ -80,6 +80,11 @@ Server's URL used in order to get the time announcements used to be streamed eve
 const SERVER_APP_TIME = "http://localhost:8080/get/time";
 
 /*
+Server's URL used in order to get the stream settings.
+*/
+const SERVER_APP_STREAM_SETTINGS = "http://localhost:8080/get/stream_settings";
+
+/*
 New audio element.
 */
 let curr_track = document.createElement('audio');
@@ -120,43 +125,28 @@ function sleep (time) {
 Gets stream settings from server.
 */
 function getStreamSettings() {
-	let url = "/get/stream_settings";
-	
-	let myHeaders = new Headers();
-
-	let init = {
-		method: "GET",
-		headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin" : "*", 
-            "Access-Control-Allow-Credentials" : "true"
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+			
+			if (JSON.parse(this.responseText).random_tracks == "yes") {
+				tracksAreRandom = true;
+			}
+			
+			if (JSON.parse(this.responseText).ads == "yes") {
+				playAds = true;
+			}
+			
+			if (JSON.parse(this.responseText).time_announcement == "yes") {
+				playTime = true;
+			}
+			console.log(tracksAreRandom);
+			console.log(playAds);
+			console.log(playTime);
         }
-	}
-	
-	fetch(url, init)
-		.then(response => response.json() )
-		.then(obj => {		
-				console.log(obj);		
-				if (obj.random_tracks == "yes") {
-					tracksAreRandom = true;
-				}
-				
-				if (obj.ads == "yes") {
-					playAds = true;
-				}
-				
-				if (obj.time_announcement == "yes") {
-					playTime = true;
-				}
-		})
-		.catch(error => {
-			console.log(error)
-		})
-		sleep(1000).then(() => {
-			// Do nothing
-		});
-		
+    };
+	xhttp.open("GET", SERVER_APP_STREAM_SETTINGS, true);
+	xhttp.send();
 }
 
 /*

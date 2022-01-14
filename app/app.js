@@ -161,9 +161,7 @@ app.post('/auth/login', function (req, res) {
 
 // Get stream settings from server
 app.get('/get/stream_settings', function (req, res) {
-	var fileName = './htdocs/stream/stream-playlist.json';
-	var file = require(fileName);
-	res.header("Content-Type",'application/json');
+	let file = require('./htdocs/stream/stream-playlist.json');
 	res.send(JSON.stringify(file));
 });
 
