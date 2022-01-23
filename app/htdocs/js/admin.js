@@ -171,6 +171,7 @@ function getStreamSettings() {
 	fetch(url, init)
 		.then(response => response.json() )
 		.then(obj => {
+                console.log(obj);
 				document.getElementById("music-genre").value = obj.playlist_id;
 				
 				if (obj.random_tracks == "yes") {
