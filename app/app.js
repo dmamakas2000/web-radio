@@ -161,8 +161,8 @@ app.post('/auth/login', function (req, res) {
 
 // Get stream settings from server
 app.get('/get/stream_settings', function (req, res) {
-	let file = require('./htdocs/stream/stream-playlist.json');
-	res.send(JSON.stringify(file));
+	let jsonData = JSON.parse(fs.readFileSync('./htdocs/stream/stream-playlist.json', 'utf-8'));
+	res.send(jsonData);
 });
 
 // Slug
