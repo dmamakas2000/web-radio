@@ -49,7 +49,7 @@ Note: It helps in this case to use screen divided mode if your operating system 
 
 ## Architecture
 An architecture diagram based on the software structure displaying the four different servers, as well as the communication happening between them, follows.
-![Architecture Diagram]()
+![Architecture Diagram](images/architecture.png)
 
 <br>
 
