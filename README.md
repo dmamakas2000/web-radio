@@ -70,3 +70,8 @@ There are two admins stored. A table containing their information follows.
 |------------------|--------------|
 | bobos@aueb.gr    | Dogpassword  |
 | funkyCat@aueb.gr | ilovedogs    |
+
+<br>
+
+## License
+This project is licensed under the **MIT License** - see the **[LICENSE](LICENSE)** file for details.
