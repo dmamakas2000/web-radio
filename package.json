@@ -5,7 +5,7 @@
     "cookie-parser": "^1.4.7",
     "express": "^4.22.1",
     "express-session": "^1.18.2",
-    "nodemailer": "^8.0.5",
+    "nodemailer": "^9.0.1",
     "socket.io": "^4.8.0"
   }
 }
